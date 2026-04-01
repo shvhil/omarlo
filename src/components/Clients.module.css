@@ -1,0 +1,70 @@
+.clients {
+  position: relative;
+  padding: 100px 5vw;
+  background: linear-gradient(180deg, var(--color-bg-deep) 0%, #1e120f 50%, var(--color-bg-deep) 100%);
+  overflow: hidden;
+}
+
+.sectionInner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionLabel {
+  font-family: var(--font-header);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: var(--color-text-main);
+  margin-bottom: 56px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.logoCell {
+  aspect-ratio: 1.6 / 1;
+  border: 1px solid rgba(196, 85, 37, 0.2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-header);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.logoCell:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-main);
+  background: rgba(196, 85, 37, 0.06);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .clients {
+    padding: 80px 6vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

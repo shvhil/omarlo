@@ -1,0 +1,182 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #150b0a;
+}
+
+/* Portrait — full bleed right side */
+.portraitImg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0;
+  transform: scale(1.06);
+  transform-origin: bottom right;
+}
+
+/* Vignettes */
+.vignetteTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(180deg, #150b0a 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.vignetteLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  background: linear-gradient(90deg, #150b0a 0%, #150b0a 20%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.vignetteBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(0deg, #150b0a 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Top label */
+.topLabel {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  font-family: var(--font-header);
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  z-index: 4;
+  opacity: 0;
+}
+
+/* Name block */
+.nameBlock {
+  position: relative;
+  z-index: 4;
+  padding: 0 6vw 7vh;
+  opacity: 0;
+  transform: translateY(30px);
+  max-width: 600px;
+}
+
+.nameRole {
+  font-family: var(--font-header);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.nameFull {
+  font-family: var(--font-header);
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.nameYears {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 4;
+  opacity: 0;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 36px;
+  background: var(--color-accent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.scrollText {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+@keyframes scrollPulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .portraitImg {
+    max-width: 100%;
+    width: 100%;
+    height: 70%;
+    object-position: top center;
+    bottom: 0;
+    right: 0;
+  }
+
+  .vignetteLeft {
+    width: 100%;
+    background: linear-gradient(180deg, transparent 40%, #150b0a 100%);
+    top: auto;
+    bottom: 0;
+    height: 60%;
+  }
+
+  .nameBlock {
+    padding: 0 6vw 10vh;
+  }
+
+  .nameFull {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+}

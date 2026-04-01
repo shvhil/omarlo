@@ -1,0 +1,46 @@
+.toggle {
+  position: fixed;
+  top: 28px;
+  right: 32px;
+  z-index: 9997;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(21, 11, 10, 0.7);
+  border: 1px solid rgba(196, 85, 37, 0.3);
+  border-radius: 100px;
+  padding: 7px 16px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(196, 85, 37, 0.15);
+}
+
+.option {
+  font-family: var(--font-header);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.option.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.divider {
+  font-size: 0.6rem;
+  color: rgba(196, 85, 37, 0.3);
+}
+
+/* In RTL mode the button stays visually top-right */
+:global([dir='rtl']) .toggle {
+  right: auto;
+  left: 32px;
+}

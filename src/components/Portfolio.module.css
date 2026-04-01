@@ -1,0 +1,178 @@
+.portfolio {
+  position: relative;
+  padding: 100px 5vw 120px;
+  background: var(--color-bg-deep);
+  overflow: hidden;
+}
+
+.sectionInner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sectionLabel {
+  font-family: var(--font-header);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: 0.06em;
+  color: var(--color-text-main);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.sectionSub {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 14px;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ── Masonry grid ── */
+.masonryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 260px;
+  gap: 18px;
+}
+
+/* Default card */
+.card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  /* starting state for GSAP */
+  opacity: 0;
+  transform: translateY(60px) scale(0.97);
+  will-change: transform, opacity;
+}
+
+/* Tall card — 2 rows */
+.tall {
+  grid-row: span 2;
+}
+
+/* Wide card — 2 columns */
+.wide {
+  grid-column: span 2;
+}
+
+/* Image fill */
+.cardImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(0.88) contrast(1.05) saturate(0.95);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.07);
+  filter: brightness(0.72) contrast(1.08) saturate(1.05);
+}
+
+/* Overlay */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(14, 7, 6, 0.88) 0%,
+    rgba(14, 7, 6, 0.3) 40%,
+    transparent 70%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 26px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateY(8px);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .cardMeta {
+  transform: translateY(0);
+}
+
+.cardCategory {
+  font-family: var(--font-header);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.cardTitle {
+  font-family: var(--font-header);
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  letter-spacing: 0.04em;
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+/* Subtle border on all cards */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(196, 85, 37, 0.0);
+  transition: border-color 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  border-color: rgba(196, 85, 37, 0.35);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .masonryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 240px;
+  }
+
+  .wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .portfolio {
+    padding: 80px 5vw 80px;
+  }
+
+  .masonryGrid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 320px;
+  }
+
+  .tall,
+  .wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}

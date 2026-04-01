@@ -1,0 +1,32 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-bg-deep);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.logo {
+  font-family: var(--font-header);
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-text-main);
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.progress {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--color-accent);
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
