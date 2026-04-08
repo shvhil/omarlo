@@ -6,11 +6,28 @@ import styles from './Clients.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const clientNames = [
-  'Nike', 'Adidas', 'Vogue', 'GQ', 'Canon',
-  'Sony', 'Leica', 'Cartier', 'Dior', 'Chanel',
-  'Prada', 'Armani', 'Zara', 'H&M', 'Gucci',
-  'Versace', 'Fendi', 'Bulgari', 'Rolex', 'Omega',
+// ✏️ لتغيير شعار عميل معين، بدّل قيمة logo الخاصة به فقط
+const clients = [
+  { name: 'Client 1',  logo: '/logo/سطام..svg' },
+  { name: 'Client 2',  logo: '/logo/سطام..svg' },
+  { name: 'Client 3',  logo: '/logo/سطام..svg' },
+  { name: 'Client 4',  logo: '/logo/سطام..svg' },
+  { name: 'Client 5',  logo: '/logo/سطام..svg' },
+  { name: 'Client 6',  logo: '/logo/سطام..svg' },
+  { name: 'Client 7',  logo: '/logo/سطام..svg' },
+  { name: 'Client 8',  logo: '/logo/سطام..svg' },
+  { name: 'Client 9',  logo: '/logo/سطام..svg' },
+  { name: 'Client 10', logo: '/logo/سطام..svg' },
+  { name: 'Client 11', logo: '/logo/سطام..svg' },
+  { name: 'Client 12', logo: '/logo/سطام..svg' },
+  { name: 'Client 13', logo: '/logo/سطام..svg' },
+  { name: 'Client 14', logo: '/logo/سطام..svg' },
+  { name: 'Client 15', logo: '/logo/سطام..svg' },
+  { name: 'Client 16', logo: '/logo/سطام..svg' },
+  { name: 'Client 17', logo: '/logo/سطام..svg' },
+  { name: 'Client 18', logo: '/logo/سطام..svg' },
+  { name: 'Client 19', logo: '/logo/سطام..svg' },
+  { name: 'Client 20', logo: '/logo/سطام..svg' },
 ];
 
 export default function Clients() {
@@ -42,13 +59,17 @@ export default function Clients() {
       <div className={styles.sectionInner}>
         <h2 className={styles.sectionLabel} ref={labelRef}>{t.clients.title}</h2>
         <div className={styles.grid}>
-          {clientNames.map((name, i) => (
+          {clients.map((client, i) => (
             <div
               className={styles.logoCell}
               key={i}
               ref={(el) => (cellsRef.current[i] = el)}
             >
-              {name}
+              <img
+                src={client.logo}
+                alt={client.name}
+                className={styles.clientLogo}
+              />
             </div>
           ))}
         </div>

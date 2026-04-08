@@ -13,7 +13,7 @@ export default function LangToggle() {
     >
       <span className={`${styles.option} ${lang === 'en' ? styles.active : ''}`}>EN</span>
       <span className={styles.divider}>|</span>
-      <span className={`${styles.option} ${lang === 'ar' ? styles.active : ''}`}>عر</span>
+      <span className={`${styles.option} ${lang === 'ar' ? styles.active : ''}`}>عربي</span>
     </button>
   );
 }

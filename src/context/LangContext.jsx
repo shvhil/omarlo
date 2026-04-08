@@ -16,7 +16,7 @@ const translations = {
       title: 'About Me',
       bio: "I am Omar Mahmoud, a professional photographer dedicated to capturing moments with precision and artistic flair. With a sharp eye for detail and a passion for visual storytelling, I specialize in creating high-quality imagery that speaks for itself. Whether it's corporate branding, events, or creative projects, my goal is to deliver stunning visuals that leave a lasting impression.",
       stats: [
-        { label: 'Years of Experience', value: '14+' },
+        { label: 'Years of Experience', value: '10+' },
         { label: 'Projects Completed', value: '500+' },
         { label: 'Happy Clients', value: '120+' },
       ],

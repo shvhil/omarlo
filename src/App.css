@@ -13,6 +13,41 @@
   opacity: 1;
 }
 
+/* Persistent Logo Styles */
+.site-logo {
+  position: sticky;
+  top: 24px;
+  left: 32px;
+  width: 72px;
+  z-index: 100;
+  cursor: pointer;
+  color: var(--color-text-main);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+[dir='rtl'] .site-logo {
+  left: auto;
+  right: 32px;
+}
+
+.site-logo.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-logo:hover {
+  transform: scale(1.05);
+  /* nice subtle hover effect */
+}
+
+.site-logo svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Custom Cursor */
 .cursor {
   position: fixed;
@@ -50,9 +85,38 @@
   filter: blur(60px);
 }
 
+/* ── Hero + About shared background ─────────────────────── */
+.heroAboutWrapper {
+  position: relative;
+}
+
+.heroAboutBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* 100vh hero + 120px about padding + ~half the heading (~1.2rem × 3vw ≈ 48px) */
+  height: calc(100vh + 144px);
+  background-image: url('/images/omarloo copy.webp');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  /* fade bottom edge so it blends into the about section */
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 @media (max-width: 768px) {
+
   .cursor,
   .cursorDot {
     display: none;
+  }
+
+  .heroAboutBg {
+    /* shift crop so the person on the far right becomes centered on narrow screens */
+    background-position: 85% top;
   }
 }

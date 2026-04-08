@@ -48,8 +48,23 @@
 
 .logoCell:hover {
   border-color: var(--color-accent);
-  color: var(--color-text-main);
   background: rgba(196, 85, 37, 0.06);
+}
+
+.clientLogo {
+  width: 60%;
+  max-width: 90px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+.logoCell:hover .clientLogo {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(40%) sepia(80%) saturate(600%) hue-rotate(5deg);
+  transform: scale(1.08);
 }
 
 @media (max-width: 768px) {

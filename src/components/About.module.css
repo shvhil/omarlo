@@ -1,7 +1,15 @@
 .about {
   position: relative;
   padding: 120px 5vw 80px;
-  background: linear-gradient(180deg, var(--color-bg-deep) 0%, #1e120f 100%);
+  /* transparent at the top so the hero image bleeds through the heading,
+     then settles into the section's own dark colour below */
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 18%,
+    var(--color-bg-deep) 42%,
+    #1e120f 100%
+  );
   overflow: hidden;
 }
 

@@ -5,7 +5,6 @@ import styles from './Hero.module.css';
 
 export default function Hero() {
   const sectionRef = useRef(null);
-  const portraitRef = useRef(null);
   const topLabelRef = useRef(null);
   const nameRef = useRef(null);
   const scrollRef = useRef(null);
@@ -19,7 +18,6 @@ export default function Hero() {
       });
 
       tl.to(topLabelRef.current, { opacity: 1, y: 0, duration: 0.8 })
-        .to(portraitRef.current, { opacity: 1, scale: 1, duration: 1.4 }, '-=0.5')
         .to(nameRef.current, { opacity: 1, y: 0, duration: 0.9 }, '-=0.7')
         .to(scrollRef.current, { opacity: 1, duration: 0.6 }, '-=0.3');
     }, sectionRef);
@@ -30,19 +28,13 @@ export default function Hero() {
   return (
     <section className={styles.hero} ref={sectionRef} id="hero">
       <div className={styles.vignetteTop} />
-      <div className={styles.vignetteLeft} />
-      <div className={styles.vignetteBottom} />
+
+
 
       <span className={styles.topLabel} ref={topLabelRef}>
         {t.nav.photography}
       </span>
 
-      <img
-        src="/omarloo.png"
-        alt="Omar Mahmoud — Professional Photographer"
-        className={styles.portraitImg}
-        ref={portraitRef}
-      />
 
       <div className={styles.nameBlock} ref={nameRef}>
         <p className={styles.nameRole}>{t.hero.role}</p>
@@ -53,7 +45,12 @@ export default function Hero() {
       </div>
 
       <div className={styles.scrollIndicator} ref={scrollRef}>
-        <div className={styles.scrollLine} />
+        <div className={styles.scrollCircle}>
+          <svg className={styles.scrollArrow} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="12" y1="4" x2="12" y2="16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            <polyline points="7,12 12,17 17,12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
         <span className={styles.scrollText}>{t.scroll}</span>
       </div>
     </section>
