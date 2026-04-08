@@ -29,7 +29,8 @@
 [dir='rtl'] h4,
 [dir='rtl'] h5,
 [dir='rtl'] h6 {
-  letter-spacing: 0; /* Arabic doesn't use letter-spacing */
+  letter-spacing: 0;
+  /* Arabic doesn't use letter-spacing */
 }
 
 
@@ -46,9 +47,15 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-header);
   font-weight: 600;
   text-transform: uppercase;
@@ -58,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: none;
 }
 
 p {
@@ -71,7 +79,7 @@ ul {
 button {
   border: none;
   background: none;
-  cursor: pointer;
+  cursor: none;
   font-family: var(--font-header);
   color: inherit;
 }
@@ -83,7 +91,8 @@ button {
 }
 
 /* lenis global classes */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
