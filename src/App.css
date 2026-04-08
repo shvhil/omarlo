@@ -15,7 +15,7 @@
 
 /* Persistent Logo Styles */
 .site-logo {
-  position: sticky;
+  position: fixed;
   top: 24px;
   left: 32px;
   width: 72px;

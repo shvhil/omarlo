@@ -39,7 +39,7 @@ const translations = {
       title: 'Our Clients',
     },
     contact: {
-      headline: ["heloo", 'Something '],
+      headline: ["Get In", "Touch"],
       subtext: "Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your vision to life.",
       cta: 'Get In Touch',
       socials: ['Instagram', 'Behance', 'LinkedIn', 'Twitter'],
